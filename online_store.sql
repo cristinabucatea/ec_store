@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2016 at 07:43 PM
+-- Generation Time: Feb 06, 2016 at 09:26 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -318,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `oc_category` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`category_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
 
 --
 -- Dumping data for table `oc_category`
@@ -340,7 +340,17 @@ INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`,
 (72, 'catalog/Home Gym/Upper Body/ub_cover.jpg', 62, 0, 1, 0, 1, '2016-02-06 20:21:58', '2016-02-06 20:21:58'),
 (73, 'catalog/Home Gym/Lower Body/lb_cover.jpg', 62, 0, 1, 0, 1, '2016-02-06 20:22:23', '2016-02-06 20:22:23'),
 (74, 'catalog/Home Gym/Weights/weights_cover.jpg', 62, 0, 1, 0, 1, '2016-02-06 20:22:51', '2016-02-06 20:23:27'),
-(75, 'catalog/Home Gym/Benches/benches_cover.jpg', 62, 0, 1, 0, 1, '2016-02-06 20:23:48', '2016-02-06 20:23:48');
+(75, 'catalog/Home Gym/Benches/benches_cover.jpg', 62, 0, 1, 0, 1, '2016-02-06 20:23:48', '2016-02-06 20:23:48'),
+(76, 'catalog/clothing/women-clothing.jpg', 59, 0, 1, 0, 1, '2016-02-06 21:23:23', '2016-02-06 21:23:23'),
+(77, 'catalog/clothing/men-clothing.jpg', 59, 0, 1, 0, 1, '2016-02-06 21:27:19', '2016-02-06 21:27:19'),
+(78, 'catalog/clothing/t-shirts-women.jpg', 76, 0, 1, 0, 1, '2016-02-06 21:31:08', '2016-02-06 21:31:08'),
+(79, 'catalog/clothing/tops-women.jpg', 76, 0, 1, 0, 1, '2016-02-06 21:32:56', '2016-02-06 21:32:56'),
+(80, 'catalog/clothing/bras-women.jpg', 76, 0, 1, 0, 1, '2016-02-06 21:34:21', '2016-02-06 21:34:21'),
+(81, 'catalog/clothing/womens-pants.jpg', 76, 0, 1, 0, 1, '2016-02-06 21:35:58', '2016-02-06 21:35:58'),
+(82, 'catalog/clothing/t-shirt-man.jpg', 77, 0, 1, 0, 1, '2016-02-06 21:38:00', '2016-02-06 21:38:00'),
+(83, 'catalog/clothing/tops-men.jpg', 77, 0, 1, 0, 1, '2016-02-06 21:39:19', '2016-02-06 22:26:14'),
+(84, 'catalog/clothing/pants-men.jpg', 77, 0, 1, 0, 1, '2016-02-06 21:40:43', '2016-02-06 21:40:43'),
+(85, 'catalog/clothing/shoes-men.jpg', 77, 0, 1, 0, 1, '2016-02-06 21:41:57', '2016-02-06 21:41:57');
 
 -- --------------------------------------------------------
 
@@ -380,7 +390,17 @@ INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `de
 (72, 1, 'Upper body', '&lt;p class=&quot;MsoNormal&quot; style=&quot;margin-bottom: 0.0001pt; line-height: 13.5pt; vertical-align: baseline; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 9pt; line-height: normal;&quot;&gt;Build your physique at home – get high quality upper body\r\nequipment designed for biceps, triceps, chest, back and shoulders!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'upper body', '', ''),
 (73, 1, 'Lower Body', '&lt;p class=&quot;MsoNormal&quot; style=&quot;margin-bottom: 0.0001pt; line-height: normal; vertical-align: baseline; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span style=&quot;font-size:9.0pt;\r\nfont-family:&amp;quot;Arial&amp;quot;,sans-serif;mso-fareast-font-family:&amp;quot;Times New Roman&amp;quot;;\r\ncolor:#333333&quot;&gt;Build your physique from the ground up with Lower Body Equipment\r\ndesigned for your quads, hamstrings, and calves!&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', 'Lower Body', '', ''),
 (74, 1, 'Weights', '&lt;p class=&quot;MsoNormal&quot; style=&quot;margin-bottom: 0.0001pt; line-height: normal; vertical-align: baseline; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 9pt;&quot;&gt;Don''t forget to rack the weights! Get high quality weights and\r\nweight racks for your home gym.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Weights', '', ''),
-(75, 1, 'Benches', '&lt;p class=&quot;MsoNormal&quot; style=&quot;margin-bottom: 0.0001pt; line-height: normal; vertical-align: baseline; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span style=&quot;font-size: 9pt; font-family: Arial, sans-serif; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Complete your\r\nhome gym with high quality weight benches. Get the most out of your at-home\r\nworkouts.&lt;/span&gt;&lt;span style=&quot;font-size:9.0pt;font-family:&amp;quot;Arial&amp;quot;,sans-serif;\r\nmso-fareast-font-family:&amp;quot;Times New Roman&amp;quot;;color:#333333&quot;&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', 'Benches', '', '');
+(75, 1, 'Benches', '&lt;p class=&quot;MsoNormal&quot; style=&quot;margin-bottom: 0.0001pt; line-height: normal; vertical-align: baseline; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;&lt;span style=&quot;font-size: 9pt; font-family: Arial, sans-serif; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Complete your\r\nhome gym with high quality weight benches. Get the most out of your at-home\r\nworkouts.&lt;/span&gt;&lt;span style=&quot;font-size:9.0pt;font-family:&amp;quot;Arial&amp;quot;,sans-serif;\r\nmso-fareast-font-family:&amp;quot;Times New Roman&amp;quot;;color:#333333&quot;&gt;&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', 'Benches', '', ''),
+(76, 1, 'Women''s Clothing', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Get high quality women''s clothing such as tank tops, capris, and pants. Feel comfortable and stylish at the gym!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Clothing, Clothes, Women', '', ''),
+(77, 1, 'Men''s Clothing', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Check out our great selection of men''s clothing including tank tops, t-shirts, shorts, pants, and much more.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Men, Clothing', '', ''),
+(78, 1, 'T-Shirts', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Show off your passion for fitness. Check out high quality T-shirts for women with the coolest designs and sexiest styles!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'T-Shirts, Shirt, Clothing, Women', '', ''),
+(79, 1, 'Tank Tops', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Check out high quality tank tops for women. Look and feel super sexy when you go to the gym!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Tank, Tops, Women', '', ''),
+(80, 1, 'Sports Bras', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Get quality support during your workouts with stylish sports bras designed for high-intensity athletes.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Bras, Sports, Women', '', ''),
+(81, 1, 'Pants', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Check out our great selection of women''s pants including yoga pants, sweats, and capris for all your fitness needs.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Pants, Shorts, Women', '', ''),
+(82, 1, 'T-Shirts', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Check out T-shirts for men - the coolest brands and hardcore designs that you won''t find anywhere else!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'T-Shirts, Shirts, Men', '', ''),
+(83, 1, 'Tank Tops', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Get high quality tank tops for men and show off all the hard work you''ve been doing at the gym!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Tank, Tops, Men', '', ''),
+(84, 1, 'Pants', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Get high quality tank tops for men and show off all the hard work you''ve been doing at the gym!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Pants, Men', '', ''),
+(85, 1, 'Shoes', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; line-height: normal;&quot;&gt;Train hard with high quality weightlifting and Mixed Martial Arts training shoes for men! High intensity performance needs high intensity footwear!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Shoes, Men', '', '');
 
 -- --------------------------------------------------------
 
@@ -439,7 +459,35 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (74, 62, 0),
 (74, 74, 1),
 (75, 62, 0),
-(75, 75, 1);
+(75, 75, 1),
+(76, 59, 0),
+(76, 76, 1),
+(77, 59, 0),
+(77, 77, 1),
+(78, 59, 0),
+(78, 76, 1),
+(78, 78, 2),
+(79, 59, 0),
+(79, 76, 1),
+(79, 79, 2),
+(80, 59, 0),
+(80, 76, 1),
+(80, 80, 2),
+(81, 59, 0),
+(81, 76, 1),
+(81, 81, 2),
+(82, 59, 0),
+(82, 77, 1),
+(82, 82, 2),
+(83, 83, 2),
+(84, 59, 0),
+(84, 77, 1),
+(84, 84, 2),
+(85, 59, 0),
+(85, 77, 1),
+(85, 85, 2),
+(83, 59, 0),
+(83, 77, 1);
 
 -- --------------------------------------------------------
 
@@ -474,7 +522,17 @@ INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VAL
 (72, 0, 0),
 (73, 0, 0),
 (74, 0, 0),
-(75, 0, 0);
+(75, 0, 0),
+(76, 0, 3),
+(77, 0, 3),
+(78, 0, 3),
+(79, 0, 3),
+(80, 0, 3),
+(81, 0, 3),
+(82, 0, 3),
+(83, 0, 3),
+(84, 0, 3),
+(85, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -508,7 +566,17 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (72, 0),
 (73, 0),
 (74, 0),
-(75, 0);
+(75, 0),
+(76, 0),
+(77, 0),
+(78, 0),
+(79, 0),
+(80, 0),
+(81, 0),
+(82, 0),
+(83, 0),
+(84, 0),
+(85, 0);
 
 -- --------------------------------------------------------
 
@@ -885,7 +953,7 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.68949997, 1, '2016-02-06 10:58:08'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2016-02-06 18:39:42'),
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2016-02-06 19:58:02'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.89609998, 1, '2016-02-06 10:58:08');
 
 -- --------------------------------------------------------
@@ -1021,7 +1089,14 @@ CREATE TABLE IF NOT EXISTS `oc_customer_login` (
   PRIMARY KEY (`customer_login_id`),
   KEY `email` (`email`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `oc_customer_login`
+--
+
+INSERT INTO `oc_customer_login` (`customer_login_id`, `email`, `ip`, `total`, `date_added`, `date_modified`) VALUES
+(1, 'store_admin', '::1', 1, '2016-02-06 20:04:53', '2016-02-06 20:04:53');
 
 -- --------------------------------------------------------
 
@@ -1677,7 +1752,7 @@ CREATE TABLE IF NOT EXISTS `oc_module` (
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (30, 'Category', 'banner', '{"name":"Category","banner_id":"6","width":"182","height":"182","status":"1"}'),
 (29, 'Home Page', 'carousel', '{"name":"Home Page","banner_id":"8","width":"130","height":"100","status":"1"}'),
-(28, 'Home Page', 'featured', '{"name":"Home Page","product":["43","40","42","30"],"limit":"4","width":"200","height":"200","status":"1"}'),
+(28, 'Home Page', 'featured', '{"name":"Home Page","product":["56","59","55","65","77","72","66","78","81"],"limit":"8","width":"200","height":"200","status":"1"}'),
 (27, 'Home Page', 'slideshow', '{"name":"Home Page","banner_id":"7","width":"1140","height":"380","status":"1"}'),
 (31, 'Banner 1', 'banner', '{"name":"Banner 1","banner_id":"6","width":"182","height":"182","status":"1"}');
 
@@ -2143,7 +2218,7 @@ CREATE TABLE IF NOT EXISTS `oc_product` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=96 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=107 ;
 
 --
 -- Dumping data for table `oc_product`
@@ -2195,7 +2270,18 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (92, '', '', '', '', '', '', '', '', 97, 7, 'catalog/Home Gym/Weights/weights.jpg', 0, 1, '27.0000', 0, 0, '2016-02-06', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:39:55', '0000-00-00 00:00:00'),
 (93, '', '', '', '', '', '', '', '', 86, 7, 'catalog/Home Gym/Weights/weights.jpg', 0, 1, '40.0000', 0, 0, '2016-02-06', '15.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:40:37', '0000-00-00 00:00:00'),
 (94, '', '', '', '', '', '', '', '', 99, 7, 'catalog/Home Gym/Weights/weights.jpg', 0, 1, '55.0000', 0, 0, '2016-02-06', '20.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:41:17', '0000-00-00 00:00:00'),
-(95, '', '', '', '', '', '', '', '', 100, 7, 'catalog/Home Gym/Weights/weights.jpg', 0, 1, '82.0000', 0, 0, '2016-02-06', '30.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:41:53', '0000-00-00 00:00:00');
+(95, '', '', '', '', '', '', '', '', 100, 7, 'catalog/Home Gym/Weights/weights.jpg', 0, 1, '82.0000', 0, 0, '2016-02-06', '30.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:41:53', '0000-00-00 00:00:00'),
+(96, ' ', '', '', '', '', '', '', '', 82, 5, 'catalog/clothing/shirt1.jpg', 0, 1, '15.0000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 21:47:14', '0000-00-00 00:00:00'),
+(97, ' ', '', '', '', '', '', '', '', 36, 5, 'catalog/clothing/shirt2.jpg', 0, 1, '14.2000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 21:52:03', '0000-00-00 00:00:00'),
+(98, ' ', '', '', '', '', '', '', '', 13, 5, 'catalog/clothing/top1.jpg', 0, 1, '10.9000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 21:56:06', '0000-00-00 00:00:00'),
+(99, ' ', '', '', '', '', '', '', '', 7, 5, 'catalog/clothing/top2.jpg', 0, 1, '18.6500', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:00:20', '0000-00-00 00:00:00'),
+(100, ' ', '', '', '', '', '', '', '', 16, 5, 'catalog/clothing/top3.jpg', 0, 1, '16.8500', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:03:37', '0000-00-00 00:00:00'),
+(101, ' ', '', '', '', '', '', '', '', 38, 5, 'catalog/clothing/bra.jpg', 0, 1, '26.3500', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:08:17', '0000-00-00 00:00:00'),
+(102, ' ', '', '', '', '', '', '', '', 17, 5, 'catalog/clothing/pants-w.jpg', 0, 1, '26.8000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:11:58', '0000-00-00 00:00:00'),
+(103, ' ', '', '', '', '', '', '', '', 19, 5, 'catalog/clothing/pants-w2.jpg', 0, 1, '41.7000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:15:16', '0000-00-00 00:00:00'),
+(104, ' ', '', '', '', '', '', '', '', 41, 5, 'catalog/clothing/pants-m.jpg', 0, 1, '21.4000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:19:30', '0000-00-00 00:00:00'),
+(105, ' ', '', '', '', '', '', '', '', 160, 5, 'catalog/clothing/shirt-m.jpg', 0, 1, '15.6800', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:22:24', '0000-00-00 00:00:00'),
+(106, ' ', '', '', '', '', '', '', '', 48, 5, 'catalog/clothing/top-m.jpg', 0, 1, '16.8000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 22:25:39', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2291,7 +2377,18 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (92, 1, 'Solid Hex Dumbbells 10kg', '&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 10.5pt; line-height: 107%; font-family: Arial, sans-serif; color: black; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Solid Hex Dumbbells are\r\ndesigned with the user in mind. We use ASTM-grade 20, the highest quality gray\r\niron casting available. Our Hex Dumbbells are coated with a durable resin-based\r\npaint and baked for one hour to assure a finish that is chip, abrasion and\r\ncorrosion-resistant.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', '', 'Solid Hex Dumbbells 10kg', '', ''),
 (93, 1, 'Solid Hex Dumbbells 15kg', '&lt;p&gt;Solid Hex Dumbbells are designed with the user in mind. We use ASTM-grade 20, the highest quality gray iron casting available. Our Hex Dumbbells are coated with a durable resin-based paint and baked for one hour to assure a finish that is chip, abrasion and corrosion-resistant.&lt;br&gt;&lt;/p&gt;', '', 'Solid Hex Dumbbells 15kg', '', ''),
 (94, 1, 'Solid Hex Dumbbells 20kg', '&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 10.5pt; line-height: 107%; font-family: Arial, sans-serif; color: black; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Solid Hex Dumbbells are\r\ndesigned with the user in mind. We use ASTM-grade 20, the highest quality gray\r\niron casting available. Our Hex Dumbbells are coated with a durable resin-based\r\npaint and baked for one hour to assure a finish that is chip, abrasion and\r\ncorrosion-resistant.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', '', 'Solid Hex Dumbbells 20kg', '', ''),
-(95, 1, 'Solid Hex Dumbbells 30kg', '&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 10.5pt; line-height: 107%; font-family: Arial, sans-serif; color: black; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Solid Hex Dumbbells are\r\ndesigned with the user in mind. We use ASTM-grade 20, the highest quality gray\r\niron casting available. Our Hex Dumbbells are coated with a durable resin-based\r\npaint and baked for one hour to assure a finish that is chip, abrasion and\r\ncorrosion-resistant.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', '', 'Solid Hex Dumbbells 30kg', '', '');
+(95, 1, 'Solid Hex Dumbbells 30kg', '&lt;p class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-size: 10.5pt; line-height: 107%; font-family: Arial, sans-serif; color: black; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;&quot;&gt;Solid Hex Dumbbells are\r\ndesigned with the user in mind. We use ASTM-grade 20, the highest quality gray\r\niron casting available. Our Hex Dumbbells are coated with a durable resin-based\r\npaint and baked for one hour to assure a finish that is chip, abrasion and\r\ncorrosion-resistant.&lt;o:p&gt;&lt;/o:p&gt;&lt;/span&gt;&lt;/p&gt;', '', 'Solid Hex Dumbbells 30kg', '', ''),
+(96, 1, 'Bodybuilding Clothing Core Series Women''s B Swoosh Slasher Tee', '&lt;p&gt;Stay cool and feel sexy in this slashed-up style. &lt;/p&gt;&lt;p&gt;Wherever you go, they’ll hate to see you leave but love to watch you go. &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Fine Jersey 4.3 oz&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;100% Ringspun Cotton&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;SHAY MASSEY MODEL SIZE: S HEIGHT: 5''0 / 152 CM CHEST: 35&quot; / 88.9 CM WAIST: 26&quot; / 66 CM HIPS: 36&quot; / 91.4 CM&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/span&gt;&lt;p&gt;&lt;/p&gt;', '', 'Clothing, Tee, Bodybuilding', '', ''),
+(97, 1, 'Bodybuilding Clothing Core Series Women''s Simple Classic Deep-V Tee', '&lt;p&gt;It''s simple to see why this tee is a classic. Its fitted cut, V-neck style, and classic colors look good with anything from spandex to skinny jeans.&lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Tri-Blend Jersey&lt;/span&gt;&lt;/li&gt;&lt;li&gt;32 Singles (145 grams 4.3 oz) &lt;/li&gt;&lt;li&gt;50% Polyester 25% Cotton 25% Rayon&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;MODEL SIZE: S HEIGHT: 5''4 / 162.6 CM CHEST: 32&quot; / 81.8 CM (US BRA: 32C)&lt;/span&gt;&lt;br style=&quot;line-height: 1.42857;&quot;&gt;&lt;/p&gt;', '', 'Women''s Simple Classic Deep-V Tee', '', ''),
+(98, 1, 'Bodybuilding Clothing Core Series Women''s B Swooshy Tri Blend Tank', '&lt;p&gt;You’ll stand out in the crowd with this stylish take on our classic logo, featuring a pop of color that blends and fades into the background.&lt;/p&gt;&lt;p&gt;MODEL SIZE: S HEIGHT: 5''4 / 162.6 CM CHEST: 32&quot; / 81.8 CM (US BRA: 32C)&lt;br&gt;&lt;/p&gt;', '', 'Women''sBSwooshyTriBlendTank', '', ''),
+(99, 1, 'BodybuildingClothing Core Series Women''s Can You Lift That Tank', '&lt;p&gt;A good sweat session can make a girl a little sassy. No one will doubt your skills with the steel when you strut your stuff in this eye-catching tank. Size up for a relaxed fits.&lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Burnout Jersey &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;30 Singles (125 grams, 3.7 oz) &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;65% Polyester 35% Cotton&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;MODEL SIZE: S HEIGHT: 5''4&quot; / 162.6 CM CHEST: 32&quot; / 81.8 CM (US BRA: 32C)&lt;br style=&quot;line-height: 1.42857;&quot;&gt;&lt;/p&gt;', '', 'CanYouLiftThatTank', '', ''),
+(100, 1, 'Bodybuilding Clothing Core Series Women''s Shut Up &amp; Train Tank', '&lt;p&gt;This fashionable body-conscious tank will take your training to the next level with soft, stretchy burnout jersey and a memorable mantra. Size up for a relaxed fit.&lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Burnout Jersey &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;30 Singles (125 grams, 3.7 oz) &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;65% Polyester 35% Cotton&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;MODEL SIZE: S HEIGHT: 5''4 / 162.6 CM CHEST: 35&quot; / 88.9 CM (US BRA: 34D)&lt;br style=&quot;line-height: 1.42857;&quot;&gt;&lt;/p&gt;', '', 'ShutUpTrainTank', '', ''),
+(101, 1, 'Bodybuilding Clothing B-Elite Series Women''s Superset Seamless Bra', '&lt;p&gt;With seamless construction, lightweight fabric, and racerback spaghetti straps, there''s nothing holding you back from all the wall balls, warrior poses, and weightlifting you can handle.&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Super-skinny racerback spaghetti straps stay out of your way &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Neverstop fabric is smooth and seamless&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;FEATURES &lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;94% Nylon / 6% Spandex&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt; Freedom of movement &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;No seams Resilient &amp;amp; versatile &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Breathable mesh panels &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Odor-controlling fabric &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Moisture-wicking &lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;Custom branded details&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br style=&quot;line-height: 1.42857;&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;', '', 'SupersetSeamlessBra', '', ''),
+(102, 1, 'Bodybuilding Clothing B-Elite Series Woman''s Stamina Short', '&lt;p&gt;Don’t hesitate to train longer, heavier, faster, or harder. Whether you’re facing fierce competition or going for a personal best, the Stamina Short will keep you dry, comfortable, and fresh as you conquer every challenge.&lt;/p&gt;&lt;p&gt;Features&lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;87% Polyester / 13% Spandex &lt;/li&gt;&lt;li&gt;Jersey Four-way stretch &lt;/li&gt;&lt;li&gt;Gusseted crotch &lt;/li&gt;&lt;li&gt;No-chafe flatlock seams&lt;/li&gt;&lt;li&gt; Anti-microbial fabric&lt;/li&gt;&lt;li&gt; Wicking moisture management &lt;/li&gt;&lt;li&gt;Logo elastic waistband&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;', '', 'StaminaShort', '', ''),
+(103, 1, 'Bodybuilding  Clothing B-Elite Series Women''s Comfort Capri', '&lt;p&gt;This capri supports freedom of movement and comfort, regardless of activity. Comfortable and stylish, this capri is great before, during and after your workouts.&lt;/p&gt;&lt;p&gt;Features&lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;87% Poleyester / 13% Lycra &lt;/li&gt;&lt;li&gt;Freedom of movement &lt;/li&gt;&lt;li&gt;Comfort waist &lt;/li&gt;&lt;li&gt;No-chafe seams &lt;/li&gt;&lt;li&gt;Resilient &amp;amp; stylish &lt;/li&gt;&lt;li&gt;Odor-controlling fabric &lt;/li&gt;&lt;li&gt;Moisture-wicking &lt;/li&gt;&lt;li&gt;Custom branded details&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;', '', 'ComfortCapri', '', ''),
+(104, 1, 'Bodybuilding  Clothing Core Series Vertical Mesh Short', '&lt;p&gt;Lightweight, breathable mesh will keep you cool and comfortable as you test your limits on the weight bench or on the court.&lt;/p&gt;&lt;p&gt;MODEL SIZE: M HEIGHT: 6''0&quot; / 182.9 CM CHEST: 45&quot; / 114.3 CM WAIST: 31&quot; / 78.7 CM HIPS: 37.5&quot; / 95.2 CM&lt;br&gt;&lt;/p&gt;', '', 'CoreSeriesVerticalMeshShort', '', ''),
+(105, 1, 'Bodybuilding Clothing Classic Fitted Logo T-Shirt ', '&lt;p style=&quot;box-sizing: content-box; font-size: 14px; line-height: normal; margin-bottom: 12px; padding: 0px; border: 0px; font-family: ProximaNovaReg, ProximaNova, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);&quot;&gt;The measurements have been tweaked to compliment athletic body types. It is thin and comfy, yet durable and well-built. Nothing is worse than putting on a shirt for the first time only to find that it''s awkward. You wash it and it comes out looking like an oversized half shirt? Junk! Those concerns are now a thing of the past, as Bodybuilding.com has perfected the basic fitted t-shirt. This shirt will immediately become the first thing you reach for on the way to the gym or even lounging around the house.&lt;/p&gt;&lt;p style=&quot;box-sizing: content-box; font-size: 14px; line-height: normal; margin-bottom: 12px; padding: 0px; border: 0px; font-family: ProximaNovaReg, ProximaNova, Arial, sans-serif; vertical-align: baseline; color: rgb(0, 0, 0);&quot;&gt;The Bodybuilding.com Classic Fitted Logo T-Shirt is 4.3oz of soft and stretchy 60/40 cotton-polyester blend. This Bodybuilding.com Classic Fitted Logo T-Shirt design features the Bodybuilding.com logo on the left chest and full upper back, with a subtle sponsor logo on the sleeve.&lt;/p&gt;&lt;ul style=&quot;box-sizing: content-box; font-size: 14px; margin: 5px 0px 10px 25px; padding: 0px; border: 0px; font-family: ProximaNovaReg, ProximaNova, Arial, sans-serif; vertical-align: baseline; line-height: normal; color: rgb(0, 0, 0);&quot;&gt;&lt;li style=&quot;box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;&quot;&gt;60% Cotton, 40% Polyester&lt;/li&gt;&lt;li style=&quot;box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;&quot;&gt;4.3 oz Soft Style&lt;/li&gt;&lt;li style=&quot;box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;&quot;&gt;Fitted Style&lt;/li&gt;&lt;li style=&quot;box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;&quot;&gt;Crew Neck&lt;/li&gt;&lt;li style=&quot;box-sizing: content-box; margin: 0px; padding: 0px; border: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;&quot;&gt;Logo May Vary&lt;/li&gt;&lt;/ul&gt;', '', 'ClassicFittedLogoT-Shirt ', '', ''),
+(106, 1, 'Bodybuilding Clothing Core Series B Swoosh Tank ', '&lt;p&gt;From sit-ups to sprints, classic moves never go out of style. Neither will you when you hit the streets in this B Swoosh logo tank.&lt;/p&gt;&lt;p&gt;&lt;ul&gt;&lt;li&gt;Fine Jersey &lt;/li&gt;&lt;li&gt;4.3 oz &lt;/li&gt;&lt;li&gt;100% Ringspun Cotton&lt;/li&gt;&lt;/ul&gt;MODEL SIZE: L HEIGHT: 6''1 / 185.4 CM CHEST: 46&quot; / 116.8 CM&lt;br&gt;&lt;/p&gt;', '', 'CoreSeriesBSwooshTank ', '', '');
 
 -- --------------------------------------------------------
 
@@ -2310,14 +2407,16 @@ CREATE TABLE IF NOT EXISTS `oc_product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=442 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=444 ;
 
 --
 -- Dumping data for table `oc_product_discount`
 --
 
 INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(441, 77, 1, 5, 0, '7.5000', '2016-02-06', '2016-02-13');
+(441, 77, 1, 5, 0, '7.5000', '2016-02-06', '2016-02-13'),
+(442, 98, 1, 10, 0, '8.5000', '2016-02-06', '2016-02-13'),
+(443, 105, 1, 50, 0, '7.6000', '2016-02-06', '2016-02-16');
 
 -- --------------------------------------------------------
 
@@ -2344,7 +2443,7 @@ CREATE TABLE IF NOT EXISTS `oc_product_image` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2406 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2417 ;
 
 --
 -- Dumping data for table `oc_product_image`
@@ -2374,7 +2473,18 @@ INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort
 (2402, 77, 'catalog/accessories/tracker-fit.jpg', 0),
 (2403, 78, 'catalog/accessories/polar-tracker.jpg', 0),
 (2404, 78, 'catalog/accessories/polar-tracker2.jpg', 1),
-(2405, 86, 'catalog/Home Gym/Upper Body/HumanX Weighted Vest blue.jpg', 0);
+(2405, 86, 'catalog/Home Gym/Upper Body/HumanX Weighted Vest blue.jpg', 0),
+(2406, 96, 'catalog/clothing/shirt1.jpg', 0),
+(2407, 97, 'catalog/clothing/shirt2.jpg', 0),
+(2408, 98, 'catalog/clothing/top1.jpg', 0),
+(2409, 99, 'catalog/clothing/top2.jpg', 0),
+(2410, 100, 'catalog/clothing/top3.jpg', 0),
+(2411, 101, 'catalog/clothing/bra.jpg', 0),
+(2412, 102, 'catalog/clothing/pants-w.jpg', 0),
+(2413, 103, 'catalog/clothing/pants-w2.jpg', 0),
+(2414, 104, 'catalog/clothing/pants-m.jpg', 0),
+(2415, 105, 'catalog/clothing/shirt-m.jpg', 0),
+(2416, 106, 'catalog/clothing/top-m.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -2487,7 +2597,15 @@ INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
 (75, 74),
 (76, 72),
 (77, 78),
-(78, 77);
+(78, 77),
+(96, 97),
+(97, 96),
+(98, 99),
+(98, 100),
+(99, 98),
+(100, 98),
+(102, 103),
+(103, 102);
 
 -- --------------------------------------------------------
 
@@ -2583,7 +2701,18 @@ INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
 (92, 74),
 (93, 74),
 (94, 74),
-(95, 74);
+(95, 74),
+(96, 78),
+(97, 78),
+(98, 79),
+(99, 79),
+(100, 79),
+(101, 80),
+(102, 81),
+(103, 81),
+(104, 84),
+(105, 82),
+(106, 83);
 
 -- --------------------------------------------------------
 
@@ -2660,7 +2789,18 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 (92, 0, 0),
 (93, 0, 0),
 (94, 0, 0),
-(95, 0, 0);
+(95, 0, 0),
+(96, 0, 2),
+(97, 0, 2),
+(98, 0, 2),
+(99, 0, 2),
+(100, 0, 2),
+(101, 0, 2),
+(102, 0, 2),
+(103, 0, 2),
+(104, 0, 2),
+(105, 0, 2),
+(106, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -2724,7 +2864,18 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 (92, 0),
 (93, 0),
 (94, 0),
-(95, 0);
+(95, 0),
+(96, 0),
+(97, 0),
+(98, 0),
+(99, 0),
+(100, 0),
+(101, 0),
+(102, 0),
+(103, 0),
+(104, 0),
+(105, 0),
+(106, 0);
 
 -- --------------------------------------------------------
 
@@ -3243,7 +3394,7 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=919 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=941 ;
 
 --
 -- Dumping data for table `oc_url_alias`
@@ -3289,7 +3440,28 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (915, 'product_id=92', ''),
 (916, 'product_id=93', ''),
 (917, 'product_id=94', ''),
-(918, 'product_id=95', '');
+(918, 'product_id=95', ''),
+(919, 'category_id=76', 'clothing-women'),
+(920, 'category_id=77', 'men-clothing'),
+(921, 'category_id=78', 't-shirts-women'),
+(922, 'category_id=79', 'tank-tops-women'),
+(923, 'category_id=80', 'sports-bras-women'),
+(924, 'category_id=81', 'pants-women'),
+(925, 'category_id=82', 't-shirt-men'),
+(940, 'category_id=83', 'tank-tops-men'),
+(927, 'category_id=84', 'pants-men'),
+(928, 'category_id=85', 'shoes-men'),
+(929, 'product_id=96', ''),
+(930, 'product_id=97', ''),
+(931, 'product_id=98', ''),
+(932, 'product_id=99', ''),
+(933, 'product_id=100', ''),
+(934, 'product_id=101', ''),
+(935, 'product_id=102', ''),
+(936, 'product_id=103', ''),
+(937, 'product_id=104', ''),
+(938, 'product_id=105', ''),
+(939, 'product_id=106', '');
 
 -- --------------------------------------------------------
 
