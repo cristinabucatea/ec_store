@@ -1,16 +1,16 @@
 <footer>
   <div class="container">
-    <div class="row">
-      <?php if ($informations) { ?>
       <div class="col-sm-3">
-        <h5><?php echo $text_information; ?></h5>
+      <h5><?php echo $text_information; ?></h5>
         <ul class="list-unstyled">
+      <?php if ($informations) { ?>
           <?php foreach ($informations as $information) { ?>
           <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
           <?php } ?>
+      <?php } ?>
+      <li class="fb-page" data-href="https://www.facebook.com/RCBGymSupplies/" data-tabs="timeline" data-width="180" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/RCBGymSupplies/"><a href="https://www.facebook.com/RCBGymSupplies/">RCB Gym Supplies</a></blockquote></div></li>
         </ul>
       </div>
-      <?php } ?>
       <div class="col-sm-3">
         <h5><?php echo $text_service; ?></h5>
         <ul class="list-unstyled">
