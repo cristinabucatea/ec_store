@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2016 at 03:01 PM
+-- Generation Time: Feb 06, 2016 at 03:45 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -318,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `oc_category` (
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`category_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
 
 --
 -- Dumping data for table `oc_category`
@@ -326,12 +326,17 @@ CREATE TABLE IF NOT EXISTS `oc_category` (
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (60, 'catalog/nutrition.PNG', 0, 1, 1, 1, 1, '2016-02-03 22:02:19', '2016-02-06 14:57:04'),
-(59, 'catalog/Capture.PNG', 0, 1, 1, 0, 1, '2016-02-03 21:42:35', '2016-02-06 14:55:16'),
-(61, '', 0, 0, 1, 0, 1, '2016-02-06 14:55:00', '2016-02-06 14:55:39'),
-(62, '', 0, 0, 1, 0, 1, '2016-02-06 14:56:23', '2016-02-06 14:56:23'),
+(59, 'catalog/clothes.png', 0, 1, 2, 2, 1, '2016-02-03 21:42:35', '2016-02-06 16:27:54'),
+(61, 'catalog/home-workout-accessories.jpg', 0, 1, 2, 3, 1, '2016-02-06 14:55:00', '2016-02-06 16:25:18'),
+(62, '', 0, 1, 1, 0, 1, '2016-02-06 14:56:23', '2016-02-06 16:29:10'),
 (63, '', 60, 0, 1, 0, 1, '2016-02-06 15:11:04', '2016-02-06 15:40:55'),
 (65, 'catalog/Nutrition/Protein/Shakes/shakes_cover.jpg', 60, 0, 1, 0, 1, '2016-02-06 15:43:58', '2016-02-06 15:43:58'),
-(66, '', 60, 0, 1, 0, 1, '2016-02-06 15:44:22', '2016-02-06 15:44:22');
+(66, '', 60, 0, 1, 0, 1, '2016-02-06 15:44:22', '2016-02-06 15:44:22'),
+(67, 'catalog/belts.jpg', 61, 0, 1, 0, 1, '2016-02-06 16:31:18', '2016-02-06 16:31:18'),
+(68, 'catalog/gloves.jpg', 61, 0, 1, 0, 1, '2016-02-06 16:33:11', '2016-02-06 16:33:11'),
+(69, 'catalog/bottle.jpg', 61, 0, 1, 0, 1, '2016-02-06 16:36:16', '2016-02-06 16:36:16'),
+(70, 'catalog/tracker.jpg', 61, 0, 1, 0, 1, '2016-02-06 16:39:39', '2016-02-06 16:39:39'),
+(71, 'catalog/straps.jpg', 61, 0, 1, 0, 1, '2016-02-06 16:43:55', '2016-02-06 16:43:55');
 
 -- --------------------------------------------------------
 
@@ -356,13 +361,18 @@ CREATE TABLE IF NOT EXISTS `oc_category_description` (
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(59, 1, 'Clothing', '&lt;p&gt;Shop here for clothing!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Equipment, Gym, Training', '', ''),
+(59, 1, 'Fitness Clothing', '&lt;p&gt;Shop here for fitness clothing!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Fitness, Gym, Training, Clothes, Clothing', '', ''),
 (60, 1, 'Nutrition', '&lt;p&gt;Shop here for nutrition supplements!&lt;/p&gt;', 'Nutritio, Supplements, Drink, Protein', '', 'Nutrition, Supplements, Drink, Protein'),
-(61, 1, 'Accessories', '&lt;p&gt;Shop here for accessories!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Gym, Training, Accessories', '', ''),
+(61, 1, 'Workout Accessories', '&lt;p&gt;Shop here for workout accessories!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Workout, Training, Accessories', '', ''),
 (62, 1, 'Home Gym', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Gym, Training, Home', '', ''),
 (63, 1, 'Whey Protein', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Nutrition, Protein, Gym', '', ''),
 (65, 1, 'Shakes', '&lt;p&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: arial, sans-serif; font-size: 12px; line-height: normal;&quot;&gt;Have the protein you need ready to go with delicious Ready-to-Drink Protein Shakes. Check out our great selections of RTDs!&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'Shakes, Nutrition, Gym', '', ''),
-(66, 1, 'Bars', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Bars, Nutrition, Gym', '', '');
+(66, 1, 'Bars', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Bars, Nutrition, Gym', '', ''),
+(67, 1, 'Belts', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Belt, Belts, Workout, Weights', '', ''),
+(68, 1, 'Gloves', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Gloves, Weights, Workout', '', ''),
+(69, 1, 'Shakers, Mixers &amp; Bottles', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Shakers, Mixers, Bottles, Workout, Fitness, Gym', '', ''),
+(70, 1, 'Fitness Trackers', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Fitness, Tracker, Trackers, Gym, Workout', '', ''),
+(71, 1, 'Straps &amp; Wraps', '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', 'Straps, Wraps, Weights, Gym, Workout', '', '');
 
 -- --------------------------------------------------------
 
@@ -403,7 +413,17 @@ INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
 (65, 60, 0),
 (66, 60, 0),
 (65, 65, 1),
-(66, 66, 1);
+(66, 66, 1),
+(67, 61, 0),
+(67, 67, 1),
+(68, 61, 0),
+(68, 68, 1),
+(69, 61, 0),
+(69, 69, 1),
+(70, 61, 0),
+(70, 70, 1),
+(71, 61, 0),
+(71, 71, 1);
 
 -- --------------------------------------------------------
 
@@ -425,11 +445,16 @@ CREATE TABLE IF NOT EXISTS `oc_category_to_layout` (
 INSERT INTO `oc_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 (59, 0, 3),
 (60, 0, 3),
-(61, 0, 0),
-(62, 0, 0),
+(61, 0, 3),
+(62, 0, 3),
 (63, 0, 0),
 (65, 0, 0),
-(66, 0, 0);
+(66, 0, 0),
+(67, 0, 3),
+(68, 0, 3),
+(69, 0, 3),
+(70, 0, 3),
+(71, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -454,7 +479,12 @@ INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
 (62, 0),
 (63, 0),
 (65, 0),
-(66, 0);
+(66, 0),
+(67, 0),
+(68, 0),
+(69, 0),
+(70, 0),
+(71, 0);
 
 -- --------------------------------------------------------
 
@@ -831,7 +861,7 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.68949997, 1, '2016-02-06 10:58:08'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2016-02-06 14:24:08'),
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2016-02-06 15:23:09'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.89609998, 1, '2016-02-06 10:58:08');
 
 -- --------------------------------------------------------
@@ -2104,7 +2134,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (56, '', '', '', '', '', '', '', '', 100, 7, 'catalog/Nutrition/Protein/Shakes/coco.jpg', 0, 1, '38.7900', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 15:49:03', '0000-00-00 00:00:00'),
 (57, '', '', '', '', '', '', '', '', 343, 7, 'catalog/Nutrition/Protein/Bars/R-Bar Protein.jpg', 0, 1, '2.4840', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 0, '2016-02-06 15:51:52', '2016-02-06 15:54:13'),
 (58, '', '', '', '', '', '', '', '', 541, 7, 'catalog/Nutrition/Protein/Bars/funnbar.jpg', 0, 1, '2.3275', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 0, '2016-02-06 15:53:46', '2016-02-06 15:54:31'),
-(59, '', '', '', '', '', '', '', '', 2432, 7, 'catalog/Nutrition/Protein/Bars/combat.jpg', 0, 1, '2.7000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 1, '2016-02-06 15:55:40', '0000-00-00 00:00:00');
+(59, '', '', '', '', '', '', '', '', 2432, 7, 'catalog/Nutrition/Protein/Bars/combat.jpg', 0, 1, '2.7000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 2, '2016-02-06 15:55:40', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2934,7 +2964,7 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=867 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=875 ;
 
 --
 -- Dumping data for table `oc_url_alias`
@@ -2943,15 +2973,21 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (772, 'information_id=4', 'about_us'),
 (852, 'category_id=60', 'nutrition'),
-(850, 'category_id=59', 'equipment'),
+(868, 'category_id=59', 'clothing'),
 (841, 'information_id=6', 'delivery'),
 (842, 'information_id=3', 'privacy'),
 (843, 'information_id=5', 'terms'),
-(851, 'category_id=62', ''),
+(869, 'category_id=62', 'homegym'),
 (861, 'category_id=66', ''),
 (863, 'product_id=56', ''),
 (860, 'category_id=65', ''),
-(866, 'product_id=59', '');
+(866, 'product_id=59', ''),
+(867, 'category_id=61', 'accesories'),
+(870, 'category_id=67', 'belts'),
+(871, 'category_id=68', 'gloves'),
+(872, 'category_id=69', 'shakers-mixers-bottles'),
+(873, 'category_id=70', 'trackers'),
+(874, 'category_id=71', 'straps-wraps');
 
 -- --------------------------------------------------------
 
