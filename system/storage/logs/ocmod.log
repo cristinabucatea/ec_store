@@ -1,0 +1,28 @@
+2016-02-06 18:33:39 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Cookie consent in OpenCart
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: </body>
+LINE: 145
+----------------------------------------------------------------
+MOD: viethemes - Facebook Share Hotfix
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <?php echo $header; ?>
+LINE: 0
+----------------------------------------------------------------
