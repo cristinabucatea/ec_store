@@ -1,0 +1,29 @@
+2016-02-11 19:53:51 - PHP Notice:  Undefined variable: text_category in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 17
+2016-02-11 19:53:51 - PHP Notice:  Undefined variable: categories in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 18
+2016-02-11 19:53:51 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 18
+2016-02-11 19:53:51 - PHP Notice:  Undefined variable: search_action in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 142
+2016-02-11 19:53:51 - PHP Notice:  Undefined variable: button_cart in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 168
+2016-02-11 19:53:58 - PHP Notice:  Undefined variable: text_category in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 17
+2016-02-11 19:53:58 - PHP Notice:  Undefined variable: categories in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 18
+2016-02-11 19:53:58 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 18
+2016-02-11 19:53:58 - PHP Notice:  Undefined variable: search_action in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 142
+2016-02-11 19:53:58 - PHP Notice:  Undefined variable: button_cart in C:\wamp\www\ec_store\catalog\view\theme\default\template\common\search.tpl on line 168
+2016-02-11 21:12:23 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp\www\ec_store\system\library\mail.php on line 164
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: image in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 22
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: store in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 25
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: address in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 27
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: geocode in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 29
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: text_telephone in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 33
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: telephone in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 34
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: fax in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 36
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: open in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 42
+2016-02-11 22:01:02 - PHP Notice:  Undefined variable: comment in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 47
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: image in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 22
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: store in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 25
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: address in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 27
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: geocode in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 29
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: text_telephone in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 33
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: telephone in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 34
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: fax in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 36
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: open in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 42
+2016-02-11 22:07:59 - PHP Notice:  Undefined variable: comment in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 47

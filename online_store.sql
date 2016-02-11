@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2016 at 09:26 PM
+-- Generation Time: Feb 11, 2016 at 10:29 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -41,7 +41,14 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `oc_address`
+--
+
+INSERT INTO `oc_address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`, `custom_field`) VALUES
+(1, 1, 'Cristina', 'Bucatea', '', 'Str. Tudor Vladimirescu', 'Nr. 51', 'Craiova', '116536', 175, 2696, '');
 
 -- --------------------------------------------------------
 
@@ -952,9 +959,9 @@ CREATE TABLE IF NOT EXISTS `oc_currency` (
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.68949997, 1, '2016-02-06 10:58:08'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2016-02-06 19:58:02'),
-(3, 'Euro', 'EUR', '', '€', '2', 0.89609998, 1, '2016-02-06 10:58:08');
+(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.69120002, 1, '2016-02-11 21:26:41'),
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2016-02-11 21:26:41'),
+(3, 'Euro', 'EUR', '', '€', '2', 1.00000000, 1, '2016-02-11 21:27:58');
 
 -- --------------------------------------------------------
 
@@ -985,7 +992,14 @@ CREATE TABLE IF NOT EXISTS `oc_customer` (
   `token` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `oc_customer`
+--
+
+INSERT INTO `oc_customer` (`customer_id`, `customer_group_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `approved`, `safe`, `token`, `date_added`) VALUES
+(1, 1, 0, 'Cristina', 'Bucatea', 'cristina.bucatea@gmail.com', '+40766758355', '', '2fba9d35abac728432acfb6fdf778d6ae4637856', 'FVYNjPHg8', NULL, NULL, 0, 1, '', '::1', 1, 1, 0, '', '2016-02-11 22:12:22');
 
 -- --------------------------------------------------------
 
@@ -1001,7 +1015,14 @@ CREATE TABLE IF NOT EXISTS `oc_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `oc_customer_activity`
+--
+
+INSERT INTO `oc_customer_activity` (`activity_id`, `customer_id`, `key`, `data`, `ip`, `date_added`) VALUES
+(1, 1, 'register', '{"customer_id":1,"name":"Cristina Bucatea"}', '::1', '2016-02-11 22:12:23');
 
 -- --------------------------------------------------------
 
@@ -1071,7 +1092,14 @@ CREATE TABLE IF NOT EXISTS `oc_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `oc_customer_ip`
+--
+
+INSERT INTO `oc_customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
+(1, 1, '::1', '2016-02-11 22:12:24');
 
 -- --------------------------------------------------------
 
@@ -1112,6 +1140,13 @@ CREATE TABLE IF NOT EXISTS `oc_customer_online` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_customer_online`
+--
+
+INSERT INTO `oc_customer_online` (`ip`, `customer_id`, `url`, `referer`, `date_added`) VALUES
+('::1', 1, 'http://localhost/ec_store/index.php?route=information/information&amp;information_id=4', 'http://localhost/ec_store/index.php?route=information/contact', '2016-02-11 22:28:09');
 
 -- --------------------------------------------------------
 
@@ -1435,10 +1470,10 @@ CREATE TABLE IF NOT EXISTS `oc_information_description` (
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', '', '', ''),
 (5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', '', '', ''),
 (3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', '', '', ''),
-(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', '', '', '');
+(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', '', '', ''),
+(4, 1, 'About Us', '&lt;p&gt;Here''s our story&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;As many young people, we were struggling to make the most of our workouts because, let''s face it, with our busy schedules these days, we are lucky to even squeeze in a few workout hours. We were constantly searching for a store where we can find all the equipment, accessories and products we needed because we could never find them all in the same place and that was very time-consuming. But it seems that we were never able to find that perfect store.&amp;nbsp;&lt;span style=&quot;line-height: 1.42857;&quot;&gt;That''s when the idea to create this store hit us! We thought that it would be an awesome idea to help others like us with this struggle and we hope that we are able to satisfy your needs.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;If you choose to buy from our store and you have suggestions of products you would like to see on our website, we would like you to know that we are open for suggestions and that''s what makes us the most loved gym supplies store in this area. So, if you would like to suggest some new products that you want to see on our website, please contact us!&lt;/p&gt;&lt;h3 style=&quot;font-family: ''Open Sans'', sans-serif; color: rgb(68, 68, 68); margin-top: 20px; margin-bottom: 10px;&quot;&gt;Our Location&lt;/h3&gt;&lt;div class=&quot;panel panel-default&quot; style=&quot;margin-bottom: 20px; border-top-width: 1px; border-color: rgb(221, 221, 221); border-radius: 4px; line-height: 20px;&quot;&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-sm-3&quot; style=&quot;width: 284.545px;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;Gym Freaks&lt;/span&gt;&lt;br&gt;&lt;address style=&quot;margin-bottom: 20px;&quot;&gt;Str. Ion Creanga, Nr. 5&lt;/address&gt;&lt;/div&gt;&lt;div class=&quot;col-sm-3&quot; style=&quot;width: 284.545px;&quot;&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;Telephone&lt;/span&gt;&lt;br&gt;0735675234&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-weight: 700;&quot;&gt;Fax&lt;/span&gt;&lt;br&gt;0251223256&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;h3 style=&quot;text-align: center; font-family: ''Open Sans'', sans-serif; color: rgb(68, 68, 68); margin-top: 20px; margin-bottom: 10px;&quot;&gt;Our Team&lt;/h3&gt;&lt;h3 style=&quot;font-family: ''Open Sans'', sans-serif; color: rgb(68, 68, 68); margin-top: 20px; margin-bottom: 10px;&quot;&gt;&lt;img src=&quot;http://localhost/ec_store/image/catalog/20150426_201732.jpg&quot; style=&quot;float: left;&quot;&gt;&lt;img src=&quot;http://localhost/ec_store/image/catalog/12695674_1029560487085153_887856929_o.jpg&quot; style=&quot;float: right;&quot;&gt;&lt;/h3&gt;\r\n', 'About Us', '', '');
 
 -- --------------------------------------------------------
 
@@ -1452,6 +1487,13 @@ CREATE TABLE IF NOT EXISTS `oc_information_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `oc_information_to_layout`
+--
+
+INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
+(4, 0, 11);
 
 -- --------------------------------------------------------
 
@@ -2229,15 +2271,15 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (51, '', '', '', '', '', '', '', '', 23, 7, 'catalog/Nutrition/Protein/Whey/Gold_Standard_Whey_907.jpg', 0, 1, '59.7500', 0, 0, '2016-02-06', '2.20000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 5, '2016-02-06 15:28:36', '2016-02-06 15:41:17'),
 (52, '', '', '', '', '', '', '', '', 5, 7, 'catalog/Nutrition/Protein/Whey/Gold_Standard_Whey_907.jpg', 0, 1, '106.7000', 0, 0, '2016-02-06', '4.50000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 15:29:51', '2016-02-06 15:41:22'),
 (53, '', '', '', '', '', '', '', '', 44, 7, 'catalog/Nutrition/Protein/Whey/Pro_JYM.jpg', 0, 1, '56.7400', 0, 0, '2016-02-06', '1.80000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 15:38:36', '2016-02-06 15:41:04'),
-(54, '', '', '', '', '', '', '', '', 22, 7, 'catalog/Nutrition/Protein/Whey/Pro_JYM.jpg', 0, 1, '35.0600', 0, 0, '2016-02-06', '907.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 15:39:49', '2016-02-06 15:41:10'),
-(55, '', '', '', '', '', '', '', '', 123, 7, 'catalog/Nutrition/Protein/Shakes/advant.jpg', 0, 1, '42.6400', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 15:47:16', '2016-02-06 15:47:28'),
-(56, '', '', '', '', '', '', '', '', 100, 7, 'catalog/Nutrition/Protein/Shakes/coco.jpg', 0, 1, '38.7900', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 15:49:03', '0000-00-00 00:00:00'),
+(54, '', '', '', '', '', '', '', '', 22, 7, 'catalog/Nutrition/Protein/Whey/Pro_JYM.jpg', 0, 1, '35.0600', 0, 0, '2016-02-06', '907.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, '2016-02-06 15:39:49', '2016-02-06 15:41:10'),
+(55, '', '', '', '', '', '', '', '', 123, 7, 'catalog/Nutrition/Protein/Shakes/advant.jpg', 0, 1, '42.6400', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 5, '2016-02-06 15:47:16', '2016-02-06 15:47:28'),
+(56, '', '', '', '', '', '', '', '', 100, 7, 'catalog/Nutrition/Protein/Shakes/coco.jpg', 0, 1, '38.7900', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, '2016-02-06 15:49:03', '0000-00-00 00:00:00'),
 (57, '', '', '', '', '', '', '', '', 343, 7, 'catalog/Nutrition/Protein/Bars/R-Bar Protein.jpg', 0, 1, '2.4840', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 0, '2016-02-06 15:51:52', '2016-02-06 15:54:13'),
 (58, '', '', '', '', '', '', '', '', 541, 7, 'catalog/Nutrition/Protein/Bars/funnbar.jpg', 0, 1, '2.3275', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 0, '2016-02-06 15:53:46', '2016-02-06 15:54:31'),
-(59, '', '', '', '', '', '', '', '', 2432, 7, 'catalog/Nutrition/Protein/Bars/combat.jpg', 0, 1, '2.7000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 3, '2016-02-06 15:55:40', '0000-00-00 00:00:00'),
+(59, '', '', '', '', '', '', '', '', 2432, 7, 'catalog/Nutrition/Protein/Bars/combat.jpg', 0, 1, '2.7000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 12, 1, 1, 4, '2016-02-06 15:55:40', '0000-00-00 00:00:00'),
 (60, ' ', '', '', '', '', '', '', '', 20, 5, 'catalog/accessories/belt-grizzly.jpg', 0, 1, '18.2500', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 1, 1, 5, '2016-02-06 17:41:10', '2016-02-06 18:54:17'),
 (61, ' ', '', '', '', '', '', '', '', 100, 5, 'catalog/accessories/belt-2004.jpg', 0, 1, '48.5000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, '2016-02-06 17:59:28', '2016-02-06 18:56:36'),
-(62, ' ', '', '', '', '', '', '', '', 142, 5, 'catalog/accessories/belt-harbinger.jpg', 0, 1, '28.7100', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 18:05:07', '2016-02-06 18:54:44'),
+(62, ' ', '', '', '', '', '', '', '', 142, 5, 'catalog/accessories/belt-harbinger.jpg', 0, 1, '28.7100', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 3, '2016-02-06 18:05:07', '2016-02-06 18:54:44'),
 (63, ' ', '', '', '', '', '', '', '', 54, 5, 'catalog/accessories/belt-woman.jpg', 0, 1, '22.2500', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 18:08:25', '2016-02-06 18:55:33'),
 (64, ' ', '', '', '', '', '', '', '', 43, 5, 'catalog/accessories/gloves-Harbinger.jpg', 0, 1, '22.2400', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 18:12:17', '2016-02-06 18:55:49'),
 (65, ' ', '', '', '', '', '', '', '', 64, 5, 'catalog/accessories/gloves-better.jpg', 0, 1, '18.0000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 18:15:51', '2016-02-06 18:54:04'),
@@ -2252,7 +2294,7 @@ INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `is
 (74, ' ', '', '', '', '', '', '', '', 0, 5, 'catalog/accessories/listing-strap.jpg', 0, 1, '38.5000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 18:53:47', '0000-00-00 00:00:00'),
 (75, ' ', '', '', '', '', '', '', '', 39, 5, 'catalog/accessories/schiek_lifting_strp.jpg', 0, 1, '29.9800', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 19:00:11', '0000-00-00 00:00:00'),
 (76, ' ', '', '', '', '', '', '', '', 28, 5, 'catalog/accessories/wrist-wrap.jpg', 0, 1, '22.6000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 19:03:03', '0000-00-00 00:00:00'),
-(77, ' ', '', '', '', '', '', '', '', 24, 5, 'catalog/accessories/tracker-fit.jpg', 0, 1, '9.3000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 19:06:59', '0000-00-00 00:00:00'),
+(77, ' ', '', '', '', '', '', '', '', 24, 5, 'catalog/accessories/tracker-fit.jpg', 0, 1, '9.3000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, '2016-02-06 19:06:59', '0000-00-00 00:00:00'),
 (78, ' ', '', '', '', '', '', '', '', 43, 5, 'catalog/accessories/polar-tracker.jpg', 0, 1, '100.0000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 19:13:38', '0000-00-00 00:00:00'),
 (79, '', '', '', '', '', '', '', '', 0, 5, 'catalog/Home Gym/Benches/powerblock.jpg', 0, 1, '200.0000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:24:46', '2016-02-06 20:26:09'),
 (80, '', '', '', '', '', '', '', '', 32, 7, 'catalog/Home Gym/Benches/powerline preacher.jpg', 0, 1, '156.0000', 0, 0, '2016-02-06', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, '2016-02-06 20:25:46', '0000-00-00 00:00:00'),
@@ -3067,7 +3109,7 @@ CREATE TABLE IF NOT EXISTS `oc_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=318 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=546 ;
 
 --
 -- Dumping data for table `oc_setting`
@@ -3103,126 +3145,102 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (146, 0, 'category', 'category_status', '1', 0),
 (158, 0, 'account', 'account_status', '1', 0),
 (159, 0, 'affiliate', 'affiliate_status', '1', 0),
-(267, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(266, 0, 'config', 'config_shared', '0', 0),
-(265, 0, 'config', 'config_secure', '0', 0),
+(535, 0, 'config', 'config_compression', '0', 0),
+(536, 0, 'config', 'config_secure', '0', 0),
+(537, 0, 'config', 'config_password', '1', 0),
+(538, 0, 'config', 'config_shared', '0', 0),
+(539, 0, 'config', 'config_encryption', 'U13N6pTWoGew90poTaoJhbtjNxxIXJyXJs61L4wUuBZvb6YcK1dGiKRw6AUg09hijU2kl7R7Czl7KRaBQtVuJFIKqibNitlzoFPa6FPdE2kwE0nasGhcfXUFhalVqp38Ymnj1wXaZHrUI5FYxlubCR8hRr7nPeHauhHdxcoNApJijKnUWEhg9HuLz1BxUptiwB7qdw8hWNnFRwrBdDuaCfxLu05zdH5SdUL6PUgLQGoXXKzPa4zUzZ3ksopOw4sCoooRsUbELkaTXQt1M1PsP4EuobewOAjKnoqGnA6CeVwf2rt2r5GNF7liYyP4kVRNoAytVVVPTq4Tg3c8aQ3q1LlvgD17D26pnYfhNUkv3OyznZV8zcdfwvTcwWgWF3YWmqgAfFYsXovDL0qzKH4dteqip1FUeZw3zMpAAbNcdYNuqEIEuSPxuCyqFoffbjsHeCvulxLGC6rySrmrk3EMkRsWXSjdEPf20H9n8GuHZ461aDJn2H6W37M6rAmLp2F0oXsp3oTofZrsZFfIkxntKgffoc4hHPLoBMIVM4fXPrz0PzMd8iCuAW5cJzBaLPfzltrwLotX9WYQPa4FMunIlTCp3R7DZfSiDiqMq9czU9DrxGS2K1EVTU4WGsmzIPp0g3wOPj98bR0kMjlolP5IyMPeVPVUshxbPYbf4DgpA1TqLimD3NkKNYjdHJT8LE9Zkxd2XABRvfj3bfjopqpJKNvQqJthUxmeXPjUzMO1jg7nOVG7zNMZFjvtIDFAoZcMDGQNG1IQRfxgVLG8Ca3dyShc1Q0ebXgSbBc87Lnr3tJSAVwqgKvyyU7D0HschBK5gc41y5h6zi1cCoW4v6VO41mqCfvyWxH0FyAaYKzjsxx8QtqBLeSFovsyVCPtCUm62zSPAGQywbwA41iBeyjQo58a68K35N3aMSRHAVcNoRTK24Xbu2hSnSBSlb0n8LFlWyXWr26jZN89YQW6QdjgkqLl8uSyfgOqZmiK6d0s4WY0hSyCsqiD2HZH3JF19XTB', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
-(261, 0, 'config', 'config_fraud_detection', '0', 0),
-(260, 0, 'config', 'config_mail_alert', '', 0),
 (103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(258, 0, 'config', 'config_ftp_status', '0', 0),
-(257, 0, 'config', 'config_ftp_root', '', 0),
-(256, 0, 'config', 'config_ftp_password', '', 0),
-(255, 0, 'config', 'config_ftp_username', '', 0),
-(254, 0, 'config', 'config_ftp_port', '21', 0),
-(253, 0, 'config', 'config_ftp_hostname', '', 0),
-(252, 0, 'config', 'config_image_location_height', '50', 0),
-(251, 0, 'config', 'config_image_location_width', '268', 0),
-(250, 0, 'config', 'config_image_cart_height', '47', 0),
-(249, 0, 'config', 'config_image_cart_width', '47', 0),
-(248, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(181, 0, 'config', 'config_meta_title', 'Your Store', 0),
-(182, 0, 'config', 'config_meta_description', 'My Store', 0),
-(183, 0, 'config', 'config_meta_keyword', '', 0),
-(184, 0, 'config', 'config_template', 'default', 0),
-(185, 0, 'config', 'config_layout_id', '4', 0),
-(186, 0, 'config', 'config_country_id', '222', 0),
-(187, 0, 'config', 'config_zone_id', '3563', 0),
-(188, 0, 'config', 'config_language', 'en', 0),
-(189, 0, 'config', 'config_admin_language', 'en', 0),
-(190, 0, 'config', 'config_currency', 'USD', 0),
-(191, 0, 'config', 'config_currency_auto', '1', 0),
-(192, 0, 'config', 'config_length_class_id', '1', 0),
-(193, 0, 'config', 'config_weight_class_id', '1', 0),
-(194, 0, 'config', 'config_product_count', '1', 0),
-(195, 0, 'config', 'config_product_limit', '15', 0),
-(196, 0, 'config', 'config_product_description_length', '100', 0),
-(197, 0, 'config', 'config_limit_admin', '20', 0),
-(198, 0, 'config', 'config_review_status', '1', 0),
-(199, 0, 'config', 'config_review_guest', '1', 0),
-(200, 0, 'config', 'config_review_mail', '0', 0),
-(201, 0, 'config', 'config_voucher_min', '1', 0),
-(202, 0, 'config', 'config_voucher_max', '1000', 0),
-(203, 0, 'config', 'config_tax', '1', 0),
-(204, 0, 'config', 'config_tax_default', 'shipping', 0),
-(205, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(206, 0, 'config', 'config_customer_online', '0', 0),
-(207, 0, 'config', 'config_customer_group_id', '1', 0),
-(208, 0, 'config', 'config_customer_group_display', '["1"]', 1),
-(209, 0, 'config', 'config_customer_price', '0', 0),
-(210, 0, 'config', 'config_account_id', '3', 0),
-(211, 0, 'config', 'config_account_mail', '0', 0),
-(212, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(293, 0, 'config', 'config_api_id', '1', 0),
-(214, 0, 'config', 'config_cart_weight', '1', 0),
-(215, 0, 'config', 'config_checkout_guest', '1', 0),
-(216, 0, 'config', 'config_checkout_id', '5', 0),
-(217, 0, 'config', 'config_order_status_id', '1', 0),
-(218, 0, 'config', 'config_processing_status', '["5","1","2","12","3"]', 1),
-(219, 0, 'config', 'config_complete_status', '["5","3"]', 1),
-(220, 0, 'config', 'config_order_mail', '0', 0),
-(221, 0, 'config', 'config_stock_display', '0', 0),
-(222, 0, 'config', 'config_stock_warning', '0', 0),
-(223, 0, 'config', 'config_stock_checkout', '0', 0),
-(224, 0, 'config', 'config_affiliate_approval', '0', 0),
-(225, 0, 'config', 'config_affiliate_auto', '0', 0),
-(226, 0, 'config', 'config_affiliate_commission', '5', 0),
-(227, 0, 'config', 'config_affiliate_id', '4', 0),
-(228, 0, 'config', 'config_affiliate_mail', '0', 0),
-(229, 0, 'config', 'config_return_id', '0', 0),
-(230, 0, 'config', 'config_return_status_id', '2', 0),
-(231, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(232, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(233, 0, 'config', 'config_image_category_width', '80', 0),
-(234, 0, 'config', 'config_image_category_height', '80', 0),
-(235, 0, 'config', 'config_image_thumb_width', '228', 0),
-(236, 0, 'config', 'config_image_thumb_height', '228', 0),
-(237, 0, 'config', 'config_image_popup_width', '500', 0),
-(238, 0, 'config', 'config_image_popup_height', '500', 0),
-(239, 0, 'config', 'config_image_product_width', '228', 0),
-(240, 0, 'config', 'config_image_product_height', '228', 0),
-(241, 0, 'config', 'config_image_additional_width', '74', 0),
-(242, 0, 'config', 'config_image_additional_height', '74', 0),
-(243, 0, 'config', 'config_image_related_width', '80', 0),
-(244, 0, 'config', 'config_image_related_height', '80', 0),
-(245, 0, 'config', 'config_image_compare_width', '90', 0),
-(246, 0, 'config', 'config_image_compare_height', '90', 0),
-(247, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(180, 0, 'config', 'config_comment', '', 0),
-(179, 0, 'config', 'config_open', '', 0),
-(178, 0, 'config', 'config_image', '', 0),
-(177, 0, 'config', 'config_fax', '', 0),
-(176, 0, 'config', 'config_telephone', '123456789', 0),
-(290, 0, 'config', 'config_email', 'cristina.bucatea@gmail.com', 0),
-(174, 0, 'config', 'config_geocode', '', 0),
-(172, 0, 'config', 'config_owner', 'Your Name', 0),
-(173, 0, 'config', 'config_address', 'Address 1', 0),
-(171, 0, 'config', 'config_name', 'Your Store', 0),
-(268, 0, 'config', 'config_seo_url', '0', 0),
-(269, 0, 'config', 'config_file_max_size', '300000', 0),
-(270, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(271, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(272, 0, 'config', 'config_maintenance', '0', 0),
-(273, 0, 'config', 'config_password', '1', 0),
-(292, 0, 'config', 'config_encryption', 'U13N6pTWoGew90poTaoJhbtjNxxIXJyXJs61L4wUuBZvb6YcK1dGiKRw6AUg09hijU2kl7R7Czl7KRaBQtVuJFIKqibNitlzoFPa6FPdE2kwE0nasGhcfXUFhalVqp38Ymnj1wXaZHrUI5FYxlubCR8hRr7nPeHauhHdxcoNApJijKnUWEhg9HuLz1BxUptiwB7qdw8hWNnFRwrBdDuaCfxLu05zdH5SdUL6PUgLQGoXXKzPa4zUzZ3ksopOw4sCoooRsUbELkaTXQt1M1PsP4EuobewOAjKnoqGnA6CeVwf2rt2r5GNF7liYyP4kVRNoAytVVVPTq4Tg3c8aQ3q1LlvgD17D26pnYfhNUkv3OyznZV8zcdfwvTcwWgWF3YWmqgAfFYsXovDL0qzKH4dteqip1FUeZw3zMpAAbNcdYNuqEIEuSPxuCyqFoffbjsHeCvulxLGC6rySrmrk3EMkRsWXSjdEPf20H9n8GuHZ461aDJn2H6W37M6rAmLp2F0oXsp3oTofZrsZFfIkxntKgffoc4hHPLoBMIVM4fXPrz0PzMd8iCuAW5cJzBaLPfzltrwLotX9WYQPa4FMunIlTCp3R7DZfSiDiqMq9czU9DrxGS2K1EVTU4WGsmzIPp0g3wOPj98bR0kMjlolP5IyMPeVPVUshxbPYbf4DgpA1TqLimD3NkKNYjdHJT8LE9Zkxd2XABRvfj3bfjopqpJKNvQqJthUxmeXPjUzMO1jg7nOVG7zNMZFjvtIDFAoZcMDGQNG1IQRfxgVLG8Ca3dyShc1Q0ebXgSbBc87Lnr3tJSAVwqgKvyyU7D0HschBK5gc41y5h6zi1cCoW4v6VO41mqCfvyWxH0FyAaYKzjsxx8QtqBLeSFovsyVCPtCUm62zSPAGQywbwA41iBeyjQo58a68K35N3aMSRHAVcNoRTK24Xbu2hSnSBSlb0n8LFlWyXWr26jZN89YQW6QdjgkqLl8uSyfgOqZmiK6d0s4WY0hSyCsqiD2HZH3JF19XTB', 0),
-(275, 0, 'config', 'config_compression', '0', 0),
-(276, 0, 'config', 'config_error_display', '1', 0),
-(277, 0, 'config', 'config_error_log', '1', 0),
-(278, 0, 'config', 'config_error_filename', 'error.log', 0),
-(279, 0, 'config', 'config_google_analytics', '', 0),
-(280, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(281, 0, 'config', 'config_mail_parameter', '', 0),
-(282, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(283, 0, 'config', 'config_mail_smtp_username', '', 0),
-(284, 0, 'config', 'config_mail_smtp_password', '', 0),
-(285, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(286, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(287, 0, 'config', 'config_captcha', 'basic_captcha', 0),
-(288, 0, 'config', 'config_captcha_page', '["review","return","contact"]', 1),
-(289, 0, 'config', 'config_login_attempts', '5', 0),
-(291, 0, 'config', 'config_url', 'http://localhost/ec_store/', 0),
+(540, 0, 'config', 'config_file_max_size', '300000', 0),
+(534, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(532, 0, 'config', 'config_maintenance', '0', 0),
+(533, 0, 'config', 'config_seo_url', '0', 0),
+(530, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(531, 0, 'config', 'config_mail_alert', '', 0),
+(529, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(528, 0, 'config', 'config_mail_smtp_password', '', 0),
+(527, 0, 'config', 'config_mail_smtp_username', '', 0),
+(525, 0, 'config', 'config_mail_parameter', '', 0),
+(526, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(524, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(523, 0, 'config', 'config_ftp_status', '0', 0),
+(522, 0, 'config', 'config_ftp_root', '', 0),
+(521, 0, 'config', 'config_ftp_password', '', 0),
+(519, 0, 'config', 'config_ftp_port', '21', 0),
+(520, 0, 'config', 'config_ftp_username', '', 0),
+(518, 0, 'config', 'config_ftp_hostname', 'localhost', 0),
+(517, 0, 'config', 'config_image_location_height', '50', 0),
+(515, 0, 'config', 'config_image_cart_height', '47', 0),
+(516, 0, 'config', 'config_image_location_width', '268', 0),
+(514, 0, 'config', 'config_image_cart_width', '47', 0),
+(513, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(511, 0, 'config', 'config_image_compare_height', '90', 0),
+(512, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(510, 0, 'config', 'config_image_compare_width', '90', 0),
+(509, 0, 'config', 'config_image_related_height', '80', 0),
+(508, 0, 'config', 'config_image_related_width', '80', 0),
+(507, 0, 'config', 'config_image_additional_height', '74', 0),
+(506, 0, 'config', 'config_image_additional_width', '74', 0),
+(505, 0, 'config', 'config_image_product_height', '228', 0),
+(504, 0, 'config', 'config_image_product_width', '228', 0),
+(503, 0, 'config', 'config_image_popup_height', '500', 0),
+(502, 0, 'config', 'config_image_popup_width', '500', 0),
+(501, 0, 'config', 'config_image_thumb_height', '228', 0),
+(500, 0, 'config', 'config_image_thumb_width', '228', 0),
+(499, 0, 'config', 'config_image_category_height', '250', 0),
+(498, 0, 'config', 'config_image_category_width', '300', 0),
+(497, 0, 'config', 'config_icon', 'catalog/icon.png', 0),
+(496, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(495, 0, 'config', 'config_captcha_page', '["review","return","contact"]', 1),
+(494, 0, 'config', 'config_captcha', '', 0),
+(493, 0, 'config', 'config_return_status_id', '2', 0),
+(492, 0, 'config', 'config_return_id', '0', 0),
+(482, 0, 'config', 'config_order_mail', '0', 0),
+(483, 0, 'config', 'config_api_id', '1', 0),
+(484, 0, 'config', 'config_stock_display', '1', 0),
+(485, 0, 'config', 'config_stock_warning', '1', 0),
+(486, 0, 'config', 'config_stock_checkout', '0', 0),
+(487, 0, 'config', 'config_affiliate_approval', '0', 0),
+(488, 0, 'config', 'config_affiliate_auto', '0', 0),
+(489, 0, 'config', 'config_affiliate_commission', '5', 0),
+(490, 0, 'config', 'config_affiliate_id', '5', 0),
+(491, 0, 'config', 'config_affiliate_mail', '0', 0),
+(481, 0, 'config', 'config_fraud_status_id', '7', 0),
+(480, 0, 'config', 'config_complete_status', '["5","1","2","3"]', 1),
+(479, 0, 'config', 'config_processing_status', '["5","1","2","12","3"]', 1),
+(478, 0, 'config', 'config_order_status_id', '1', 0),
+(477, 0, 'config', 'config_checkout_id', '5', 0),
+(476, 0, 'config', 'config_checkout_guest', '1', 0),
+(475, 0, 'config', 'config_cart_weight', '1', 0),
+(474, 0, 'config', 'config_invoice_prefix', 'INV-2016-00', 0),
+(473, 0, 'config', 'config_account_mail', '0', 0),
+(472, 0, 'config', 'config_account_id', '3', 0),
+(471, 0, 'config', 'config_login_attempts', '5', 0),
+(470, 0, 'config', 'config_customer_price', '0', 0),
+(469, 0, 'config', 'config_customer_group_display', '["1"]', 1),
+(468, 0, 'config', 'config_customer_group_id', '1', 0),
+(467, 0, 'config', 'config_customer_online', '1', 0),
+(466, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(465, 0, 'config', 'config_tax_default', 'shipping', 0),
+(464, 0, 'config', 'config_tax', '1', 0),
+(463, 0, 'config', 'config_voucher_max', '10', 0),
+(462, 0, 'config', 'config_voucher_min', '1', 0),
+(461, 0, 'config', 'config_review_mail', '0', 0),
+(459, 0, 'config', 'config_review_status', '1', 0),
+(460, 0, 'config', 'config_review_guest', '1', 0),
+(458, 0, 'config', 'config_limit_admin', '20', 0),
+(457, 0, 'config', 'config_product_description_length', '100', 0),
+(456, 0, 'config', 'config_product_limit', '15', 0),
+(455, 0, 'config', 'config_product_count', '1', 0),
+(454, 0, 'config', 'config_weight_class_id', '1', 0),
+(453, 0, 'config', 'config_length_class_id', '1', 0),
+(452, 0, 'config', 'config_currency_auto', '1', 0),
+(450, 0, 'config', 'config_admin_language', 'en', 0),
+(451, 0, 'config', 'config_currency', 'EUR', 0),
+(449, 0, 'config', 'config_language', 'en', 0),
 (313, 0, 'oneall', 'oneall_auto_account', '0', 0),
 (312, 0, 'oneall', 'oneall_store_lang', '0', 0),
 (311, 0, 'oneall', 'oneall_status', '1', 0),
@@ -3234,7 +3252,29 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (314, 0, 'oneall', 'oneall_ask_address', '0', 0),
 (315, 0, 'oneall', 'oneall_auto_link', '1', 0),
 (316, 0, 'oneall', 'oneall_social_networks', '{"facebook":"1"}', 1),
-(317, 0, 'oneall', 'oneall_socials', 'facebook', 0);
+(317, 0, 'oneall', 'oneall_socials', 'facebook', 0),
+(541, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(542, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(543, 0, 'config', 'config_error_display', '1', 0),
+(544, 0, 'config', 'config_error_log', '1', 0),
+(545, 0, 'config', 'config_error_filename', 'error.log', 0),
+(448, 0, 'config', 'config_zone_id', '2696', 0),
+(444, 0, 'config', 'config_image', '', 0),
+(445, 0, 'config', 'config_open', '', 0),
+(446, 0, 'config', 'config_comment', '', 0),
+(447, 0, 'config', 'config_country_id', '175', 0),
+(434, 0, 'config', 'config_meta_keyword', '', 0),
+(435, 0, 'config', 'config_template', 'default', 0),
+(436, 0, 'config', 'config_layout_id', '4', 0),
+(437, 0, 'config', 'config_name', 'Gym Freaks', 0),
+(438, 0, 'config', 'config_owner', 'Gym Freaks', 0),
+(439, 0, 'config', 'config_address', 'Str. Ion Creanga, Nr. 5', 0),
+(440, 0, 'config', 'config_geocode', '', 0),
+(441, 0, 'config', 'config_email', 'support@gymfreaks.com', 0),
+(442, 0, 'config', 'config_telephone', '0735675234', 0),
+(443, 0, 'config', 'config_fax', '0251223256', 0),
+(433, 0, 'config', 'config_meta_description', 'Gym Freaks', 0),
+(432, 0, 'config', 'config_meta_title', 'Gym Freaks', 0);
 
 -- --------------------------------------------------------
 
@@ -3394,14 +3434,14 @@ CREATE TABLE IF NOT EXISTS `oc_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=941 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=944 ;
 
 --
 -- Dumping data for table `oc_url_alias`
 --
 
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
-(772, 'information_id=4', 'about_us'),
+(943, 'information_id=4', 'about_us'),
 (877, 'category_id=60', 'nutrition'),
 (875, 'category_id=59', 'clothing'),
 (841, 'information_id=6', 'delivery'),
