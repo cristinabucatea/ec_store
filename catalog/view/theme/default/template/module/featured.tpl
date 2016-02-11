@@ -17,19 +17,28 @@
           <?php } ?>
           <?php } ?>
         </div>
+            
         <?php } ?>
+        
+        <?php if ($product['stock']) { ?>
+        <p class="stock">
+          <span class="stock-info"><?php echo $text_stock; ?><?php echo $product['stock']; ?>
+        <?php } ?>
+        </p>
         <?php if ($product['price']) { ?>
         <p class="price">
           <?php if (!$product['special']) { ?>
           <?php echo $product['price']; ?>
           <?php } else { ?>
           <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+          
           <?php } ?>
           <?php if ($product['tax']) { ?>
           <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
           <?php } ?>
         </p>
         <?php } ?>
+        
       </div>
       <div class="button-group">
         <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>

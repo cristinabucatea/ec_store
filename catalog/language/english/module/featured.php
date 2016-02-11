@@ -4,3 +4,5 @@ $_['heading_title'] = 'Featured';
 
 // Text
 $_['text_tax']      = 'Ex Tax:';
+$_['text_stock']               = 'Availability:';
+$_['text_instock']             = 'In Stock';

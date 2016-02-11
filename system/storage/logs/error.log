@@ -27,3 +27,54 @@
 2016-02-11 22:07:59 - PHP Notice:  Undefined variable: fax in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 36
 2016-02-11 22:07:59 - PHP Notice:  Undefined variable: open in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 42
 2016-02-11 22:07:59 - PHP Notice:  Undefined variable: comment in C:\wamp\www\ec_store\catalog\view\theme\default\template\information\information.tpl on line 47
+2016-02-11 22:55:53 - PHP Notice:  Undefined variable: text_model in C:\wamp\www\ec_store\system\storage\modification\catalog\view\theme\default\template\product\product.tpl on line 133
+2016-02-11 22:57:38 - PHP Notice:  Undefined variable: text_stock in C:\wamp\www\ec_store\system\storage\modification\catalog\view\theme\default\template\product\product.tpl on line 137
+2016-02-11 23:06:39 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:39 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:39 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:39 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:39 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:39 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:40 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:40 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:40 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:40 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:40 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:40 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:42 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:42 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:42 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:43 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:43 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:43 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:43 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:43 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:43 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:43 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:43 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:43 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:44 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:44 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:44 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:44 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:44 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:44 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:46 - PHP Notice:  Undefined variable: filter_data in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 30
+2016-02-11 23:06:46 - PHP Notice:  Undefined variable: result in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:06:46 - PHP Warning:  Invalid argument supplied for foreach() in C:\wamp\www\ec_store\catalog\controller\product\json.php on line 36
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:30:54 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 22
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
+2016-02-11 23:33:55 - PHP Notice:  Array to string conversion in C:\wamp\www\ec_store\catalog\view\theme\default\template\module\featured.tpl on line 25
