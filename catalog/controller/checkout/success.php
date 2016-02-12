@@ -69,7 +69,7 @@ class ControllerCheckoutSuccess extends Controller {
 		if ($this->customer->isLogged()) {
 			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', 'SSL'), $this->url->link('account/order', '', 'SSL'), $this->url->link('account/download', '', 'SSL'), $this->url->link('information/contact'));
 		} else {
-			$data['text_message'] = sprintf($this->language->get('text_guest'), $this->url->link('information/contact'),  $this->url->link('account/register'));
+			$data['text_message'] = sprintf($this->language->get('text_guest'),  $this->url->link('account/register'), $this->url->link('information/contact'));
 		}
 
 		$data['button_continue'] = $this->language->get('button_continue');
