@@ -27,15 +27,48 @@ class ControllerProductJson extends Controller {
 			$max = (int) $amount_params[1];
 		}
 		if (isset($this->request->get['search'])) {
-			$results = $this->model_catalog_product->getProducts($filter_data);
+			//$results = $this->model_catalog_product->getProducts($filter_data);
 			$input = preg_quote(strtolower($this->make($search)), '~'); 
 			$current = unserialize(file_get_contents("product_key.txt"));
 			$data_products = unserialize(file_get_contents("products.txt"));
-			//$result = preg_grep('~' . $input . '~', $current);
+			$result = preg_grep('~' . $input . '~', $current);
 			$results = array();
 			foreach($result as $key => $val)
-			{
-				$results[] = $data_products[$key];
+			{//$results[] = $data_products[$key];
+				$product = $data_products[$key];
+				if($categoryId != 0)
+				{
+					if($product['product_categories']['category_id'] == $categoryId)
+					{
+						if (isset($this->request->get['check_amount']) && isset($this->request->get['amount']))
+						{
+							$price = str_replace('$', '', $product['price']) ;
+							$price = (int) $price;
+							if($price >= $min && $price <= $max)
+							{
+								$results[] = $product;
+							}
+						}else
+						{
+							$results[] = $product;
+						}
+						
+					}
+				}else
+				{
+					if (isset($this->request->get['check_amount']) && isset($this->request->get['amount']))
+						{
+							$price = str_replace('$', '', $product['price']) ;
+							$price = (int) $price;
+							if($price >= $min && $price <= $max)
+							{
+								$results[] = $product;
+							}
+						}else
+						{
+							$results[] = $product;
+						}
+				}
 				
 			}
 		}else
