@@ -50,15 +50,6 @@
 			</select>
 		</div>
 
-		<span class="col-sm-3 padding-bottom-5px">
-			<b>Price :</b>
-		</span>
-		<div class="col-sm-9 padding-bottom-5px">
-			<input type="checkbox" name="check_amount" value="0" > 
-			<input name="amount" type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-			<div id="slider-range"></div>
-		</div>
-
 		<div class="col-sm-3 padding-bottom-5px">
 		</div>
 		<div class="col-sm-9 padding-bottom-5px">
@@ -74,33 +65,13 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script  type="text/javascript" >
 	var $searchAutoConfig = $('.search-autocomplete-cog');
-	var min = 75, max = 300;
-	$(function() {
-	    $( "#slider-range" ).slider({
-	      range: true,
-	      min: 0,
-	      max: 500,
-	      values: [ min, max ],
-	      slide: function( event, ui ) {
-	        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-	      }
-	    });
-	    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-	      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-	});
-	var categoryId, sort, amount, check_amount = false;
+	var categoryId, sort, check_amount = false;
 	function btnSearchConfig()
 	{
 		event.preventDefault();
 		$searchAutoConfig.show();
 		$('.result-search-autocomplete').css({"display":"none"});
 		$('input[name=search]').val('');
-	}
-	function resetSlider() {
-	  var $slider = $("#slider-range");
-	  $slider.slider("values", 0, min);
-	  $slider.slider("values", 1, max);
-	  $( "#amount" ).val( "$" + min + " - $" + max );
 	}
 	// Reset option filter
 	$('button[name=btn-clear-option]').on('click', function(){
@@ -110,9 +81,7 @@
     	$('select[name=option-sort] option').prop('selected', function() {
         	return this.defaultSelected;
     	});
-    	resetSlider();
     	categoryId = 0, sort = 'ASC';
-    	amount = '$'+min+' - $'+max;
     	check_amount = false;
     	$('input[name=check_amount]').prop( "checked", false );
 	})
@@ -120,7 +89,6 @@
 	$('button[name=btn-apply-option]').on('click', function(){
     	categoryId = $('select[name=option-category').val();
     	sort       = $('select[name=option-sort').val();
-    	amount     = $('input[name=amount]').val();
     	if($('input[name=check_amount]').prop("checked") == true){
             check_amount = true;
         }else
